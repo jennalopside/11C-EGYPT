@@ -10,18 +10,31 @@
             overflow: hidden; background-color: #f7f4eb;
             -webkit-user-select: none; user-select: none; 
         }
-        .wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; }
+        
+        /* Flexbox Wrapper: Forces whatever is inside it to stay perfectly centered */
+        .wrapper { 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            display: flex;
+            justify-content: center; /* Aligns horizontally center */
+            align-items: center;     /* Aligns vertically center */
+        }
         
         iframe { 
+            /* The oversized frame dimensions that clip the watermark */
             width: 106%; 
             height: 108%; 
             
-            /* Shifts the iframe slightly up and left to balance the centering */
-            margin-left: -3%; 
-            margin-top: -2%; 
+            /* Reset all manual shifting so Flexbox can do its job */
+            margin: 0; 
             
             border: none; 
             display: block;
+            flex-shrink: 0; /* Prevents the browser from warping the iframe size */
         }
     </style>
     <script>
