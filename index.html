@@ -22,21 +22,22 @@
         
         iframe { 
             width: 100%; 
-            height: 100%; 
+            height: 106%; 
             border: none; 
             display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .blocker {
             position: absolute;
             bottom: 0;
-            right: 0;
-            width: 180px;  
-            height: 60px;  
-            background: transparent;
+            left: 0;
+            width: 100%;  
+            height: 70px;  
+            background: #f7f4eb;
             z-index: 999999; 
-            pointer-events: auto; 
-            cursor: default;
         }
     </style>
     <script>
@@ -49,20 +50,12 @@
             if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) { return false; }
             if (e.metaKey && e.altKey && e.keyCode == 'I'.charCodeAt(0)) { return false; }
         };
-
-        window.onload = function() {
-            var iframe = document.getElementById('site-frame');
-            if (!window.location.hash) {
-                window.location.hash = 'v=2';
-                iframe.src = iframe.src + '?v=' + new Date().getTime();
-            }
-        }
     </script>
 </head>
 <body>
     <div class="wrapper">
+        <iframe src="https://nile-archive-hub.base44.app"></iframe>
         <div class="blocker"></div>
-        <iframe id="site-frame" src="https://nile-archive-hub.base44.app"></iframe>
     </div>
 </body>
 </html>
