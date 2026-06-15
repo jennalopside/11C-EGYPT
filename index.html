@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive of the Nile</title>
+    <style>
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%;
+            overflow: hidden; /* This hides anything that gets pushed off-screen */
+            background-color: #f7f4eb; /* Matches your site's cream background color */
+        }
+        
+        .wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /* We make the viewable area 100% of the screen */
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        iframe { 
+            /* We force the iframe to be slightly taller and wider than the screen */
+            width: 104%; 
+            height: 106%; 
+            
+            /* We shift it slightly so the extra space cuts off ONLY the bottom and right edges */
+            margin-left: 0;
+            margin-top: 0;
+            
+            border: none; 
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <iframe src="https://nile-archive-hub.base44.app"></iframe>
+    </div>
+</body>
+</html>
