@@ -21,18 +21,22 @@
         }
         
         iframe { 
-         
             width: 100%; 
             height: 100%; 
             border: none; 
             display: block;
+        }
 
-          
-            clip-path: inset(0px 140px 55px 0px);
-
-
-            transform: scale(1.05);
-            transform-origin: top left;
+        .blocker {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px;  
+            height: 60px;  
+            background: transparent;
+            z-index: 999999; 
+            pointer-events: auto; 
+            cursor: default;
         }
     </style>
     <script>
@@ -49,6 +53,7 @@
 </head>
 <body>
     <div class="wrapper">
+        <div class="blocker"></div>
         <iframe src="https://nile-archive-hub.base44.app"></iframe>
     </div>
 </body>
