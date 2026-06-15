@@ -21,19 +21,19 @@
         }
         
         iframe { 
-            /* 1. We keep it oversized so the watermark sits far off-screen */
-            width: 108%; 
-            height: 110%; 
-            
-            /* 2. Pin it strictly to the top left so it grows outwards to the right and bottom */
-            position: absolute;
-            top: 0;
-            left: 0;
+            /* 1. We keep the frame exactly at 100% full screen so content is perfectly centered on all devices */
+            width: 100%; 
+            height: 100%; 
             border: none; 
             display: block;
 
-            /* 3. This shifts the internal display slightly back to the left to perfectly center your content */
-            transform: translateX(-2%);
+            /* 2. DEVICE-PROOF CROP: This mathematically slices off the exact area where the badge lives.
+                  It says: Keep drawing the page until you get to 140 pixels from the right and 55 pixels from the bottom, then stop. */
+            clip-path: inset(0px 140px 55px 0px);
+
+            /* 3. Scale it back up slightly so the user doesn't see a blank gap where the crop happened */
+            transform: scale(1.05);
+            transform-origin: top left;
         }
     </style>
     <script>
